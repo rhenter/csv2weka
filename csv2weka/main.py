@@ -24,19 +24,23 @@ def print_version(ctx, param, value):
     'input_filename', '-f',
     default=CSV_NAME,
     prompt='CSV file Name',
+    help='CSV File Name to generate DataFrame.'
 )
 @click.option(
     'output_filename', '-o',
     default=ARFF_NAME,
-    prompt='CSV file Name',
+    prompt='ARFF file Name',
+    help='ARFF file Name to use on Weka.',
 )
 @click.option(
     'selected_columns', '-c',
     prompt='Selected Columns to OneHotEncoding',
+    help='Columns to OneHotEncoding.'
 )
 @click.option(
     'header_names', '-h',
     prompt='CSV Header fieldnames',
+    help='CSV Header fieldnames.'
 )
 @click.option(
     '--version',
