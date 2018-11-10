@@ -5,24 +5,36 @@ CSV2ARFF
 CSV2ARFF is a simple analize tool written in python using One Hot Encoding to Label classification
 
 Installation
-------------
+============
+
+Using git
+---------
 
 .. code-block:: bash
 
-   $ cd data_mining
-   $ pip install .
+    $ git clone https://github.com/rhenter/csv2weka.git
+    $ cd csv2weka
+    $ python setup.py install
 
 Or, using the source and
+------------------------
+
+Dowload the file on github
+
+    https://github.com/rhenter/csv2weka/archive/master.zip
+
+Uncompress, enter on the folder and install
 
 .. code-block:: bash
 
-   $ python setup.py install
+    $ cd csv2weka
+    $ python setup.py install
 
-Add sudo in the beginning if you met problem.
+*Add sudo in the beginning if you met problem.
 
 
 How to use
-----------
+==========
 
 Help command
 
