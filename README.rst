@@ -16,10 +16,10 @@ Using git
     $ cd csv2weka
     $ python setup.py install
 
-Or, using the source and
-------------------------
+Or, using the Zip file
+----------------------
 
-Dowload the file on github
+Dowload the file using a web browser
 
     https://github.com/rhenter/csv2weka/archive/master.zip
 
