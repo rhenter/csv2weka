@@ -1,8 +1,8 @@
 ========
-CSV2ARFF
+csv2weka
 ========
 
-CSV2ARFF is a simple analize tool written in python using One Hot Encoding to Label classification
+Csv2Weka is a simple analize tool written in python using One Hot Encoding to Label classification
 
 Installation
 ============
