@@ -5,33 +5,14 @@ import os
 import re
 from setuptools import find_packages, setup, Command
 
+from csv2weka import __version__
 
 here = os.path.dirname(os.path.abspath(__file__))
-version = '0.0.0'
+version = __version__
 description = (
     'CSV2ARFF is a simple analize tool written in python using '
     'One Hot Encoding to Label classification.'
 )
-
-
-# Save last Version
-def save_version():
-    version_path = os.path.join(here, "csv2weka/version.py")
-
-    with open(version_path) as version_file_read:
-        content_file = version_file_read.read()
-
-    VSRE = r"^__version__ = ['\"]([^'\"]*)['\"]"
-    mo = re.search(VSRE, content_file, re.M)
-    current_version = mo.group(1)
-
-    content_file = content_file.replace(current_version, "{}".format(version))
-
-    with open(version_path, 'w') as version_file_write:
-        version_file_write.write(content_file)
-
-
-save_version()
 
 
 class VersionCommand(Command):
