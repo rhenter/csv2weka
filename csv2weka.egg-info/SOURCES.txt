@@ -1,0 +1,19 @@
+LICENSE
+MANIFEST.in
+README.rst
+requirements-dev.txt
+requirements.txt
+setup.cfg
+setup.py
+csv2weka/__init__.py
+csv2weka/__main__.py
+csv2weka/analize copy.py
+csv2weka/analizer.py
+csv2weka/main.py
+csv2weka/version.py
+csv2weka.egg-info/PKG-INFO
+csv2weka.egg-info/SOURCES.txt
+csv2weka.egg-info/dependency_links.txt
+csv2weka.egg-info/entry_points.txt
+csv2weka.egg-info/requires.txt
+csv2weka.egg-info/top_level.txt

@@ -1,0 +1,57 @@
+Metadata-Version: 1.1
+Name: csv2weka
+Version: 0.0.0
+Summary: CSV2ARFF is a simple analize tool written in python using One Hot Encoding to Label classification.
+Home-page: UNKNOWN
+Author: Rafael Henter
+Author-email: rafael@henter.com.br
+License: MIT
+Description: 
+        ========
+        CSV2ARFF
+        ========
+        
+        CSV2ARFF is a simple analize tool written in python using One Hot Encoding to Label classification
+        
+        Installation
+        ------------
+        
+        .. code-block:: bash
+        
+           $ cd data_mining
+           $ pip install .
+        
+        Or, using the source and
+        
+        .. code-block:: bash
+        
+           $ python setup.py install
+        
+        Add sudo in the beginning if you met problem.
+        
+        
+        How to use
+        ----------
+        
+        Help command
+        
+        .. code-block:: bash
+        
+           $ csv2weka --help
+        
+        
+           $ csv2weka -f capture-sample.csv -o test.arff -h Duration,Protocol,Direction,State,sTos,dTos,TotalPakets,TotalBytes,SourceBytes,Label -c Protocol,State,Direction
+        
+Keywords: Weka
+Platform: UNKNOWN
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Education
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python
+Classifier: Topic :: Education
