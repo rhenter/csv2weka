@@ -1,4 +1,0 @@
-
-        [console_scripts]
-        csv2weka=csv2weka.__main__:cli
-    
