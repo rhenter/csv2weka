@@ -23,7 +23,7 @@ Dowload the file on github
 
     https://github.com/rhenter/csv2weka/archive/master.zip
 
-Uncompress, enter on the folder and install
+Uncompress, go to the folder using a terminal and install as following
 
 .. code-block:: bash
 
