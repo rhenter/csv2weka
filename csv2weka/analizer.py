@@ -18,7 +18,7 @@ class Csv2Weka(object):
         Create a dataframe using a CSV file
         '''
         return pd.read_csv(
-            self.input_filename, header='infer', na_values="?", delimiter=';',
+            self.input_filename, header='infer', na_values="0", delimiter=';',
             skip_blank_lines=True, skipinitialspace=True
         )
 
