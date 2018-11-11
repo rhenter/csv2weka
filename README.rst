@@ -47,12 +47,11 @@ Help command
 
     Example:
 
-        $ csv2weka -f capture-sample.csv -o test.arff -h Duration,Protocol,Direction,State,sTos,dTos,TotalPakets,TotalBytes,SourceBytes,Label -c Protocol,State,Direction
+        $ csv2weka -i capture-sample.csv -o test.arff -c Protocol,State,Direction
 
     Options:
-    -f TEXT    CSV File Name to generate DataFrame.
+    -i TEXT    CSV File Name to generate DataFrame.
     -o TEXT    ARFF file Name to use on Weka.
     -c TEXT    Columns to OneHotEncoding.
-    -h TEXT    CSV Header fieldnames.
     --version  Show the version and exit.
     --help     Show this message and exit.

@@ -54,7 +54,7 @@ def main(input_filename, output_filename, feature_cols):
     \b
     Example:
     \b
-    \t $ csv2weka -f capture-sample.csv -o test.arff -c Protocol,State,Direction
+    \t $ csv2weka -i capture-sample.csv -o test.arff -c Protocol,State,Direction
 
     """
     click.echo('-' * 25)
