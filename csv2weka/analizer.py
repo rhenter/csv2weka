@@ -18,7 +18,7 @@ class Csv2Weka(object):
         Create a dataframe using a CSV file
         '''
         return pd.read_csv(
-            self.input_filename, header='infer', na_values="0", delimiter=';',
+            self.input_filename, header='infer', na_filter=False, delimiter=';',
             skip_blank_lines=True, skipinitialspace=True
         )
 
@@ -41,13 +41,6 @@ class Csv2Weka(object):
         '''
         # One Hot Encoder categorizer
         onehotencoder = OneHotEncoder(categories='auto')
-
-        # if feature_cols:
-        #     # Select the data only with the feature cols selected
-        #     data_selected = data_frame.loc[:, feature_cols].values
-        # else:
-        #     # Use all columns
-        #     data_selected = data_frame.iloc[:, 0:len(data_frame.columns)].values
 
         data_selected = data_frame.loc[:, feature_cols].values
 
