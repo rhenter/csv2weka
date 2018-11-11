@@ -7,21 +7,21 @@ import sys
 from . import Csv2Weka, __version__
 
 
-CSV_NAME = 'capture-sample.csv'
-ARFF_NAME = 'analized.arff'
+CSV_NAME = 'capture.csv'
+ARFF_NAME = 'oneHotEncoding.arff'
 
 
 def print_version(ctx, param, value):
     if not value or ctx.resilient_parsing:
         return
 
-    click.echo('translate, version {}'.format(__version__))
+    click.echo('Csv2Weka, version {}'.format(__version__))
     ctx.exit()
 
 
 @click.command()
 @click.option(
-    'input_filename', '-f',
+    'input_filename', '-i',
     default=CSV_NAME,
     prompt='CSV file Name',
     help='CSV File Name to generate DataFrame.'
@@ -33,14 +33,10 @@ def print_version(ctx, param, value):
     help='ARFF file Name to use on Weka.',
 )
 @click.option(
-    'selected_columns', '-c',
-    prompt='Selected Columns to OneHotEncoding',
-    help='Columns to OneHotEncoding.'
-)
-@click.option(
-    'header_names', '-h',
-    prompt='CSV Header fieldnames',
-    help='CSV Header fieldnames.'
+    'feature_cols', '-c',
+    default='',
+    prompt='Feature Columns',
+    help='Feature Columns to OneHotEncoding.'
 )
 @click.option(
     '--version',
@@ -50,32 +46,47 @@ def print_version(ctx, param, value):
     is_eager=True,
     help='Show the version and exit.'
 )
-def main(input_filename, header_names, output_filename, selected_columns):
+def main(input_filename, output_filename, feature_cols):
     """
-    Python command line tool to prepare CSV files to Weka
+    Python command line tool to convert string data to numerical using
+    OneHotEncoding to use on Weka Software
 
     \b
     Example:
     \b
-    \t $ csv2weka -f capture-sample.csv -o test.arff -h Duration,Protocol,Direction,State,sTos,dTos,TotalPakets,TotalBytes,SourceBytes,Label -c Protocol,State,Direction
+    \t $ csv2weka -f capture-sample.csv -o test.arff -c Protocol,State,Direction
 
     """
     click.echo('-' * 25)
 
-    header_names = header_names.split(',')
-    selected_columns = selected_columns.split(',')
+    # Instanciate the Csv2Web object
+    csv_path = os.path.abspath(input_filename)
+    csv2weka = Csv2Weka(csv_path)
 
-    csv2weka = Csv2Weka(input_filename, header_names=header_names)
+    # Criando o data frame
+    click.echo('\nAnalyzing CSV data file and creating the data frame ...')
+    data_frame = csv2weka.create_dataframe()
 
-    # Treinando os dados
-    click.echo('\nAnalyzing CSV data file ...')
+    if not feature_cols:
+        feature_cols = data_frame.columns
+    else:
+        feature_cols = feature_cols.split(',')
+
+    # Convertendo as Strings para valores numericos
     click.echo('\nDataFrame Training and Adding One Hot Encoding to selected columns ...')
-    one_hot_encoding = csv2weka.generate_one_hot_encoding(columns=selected_columns)
+    one_hot_encoding = csv2weka.generate_one_hot_encoding(
+        data_frame=data_frame,
+        feature_cols=feature_cols
+    )
 
     # Exportando dados para um arquivo ARFF (WEKA)
     click.echo('\nExporting data to ARFF file ...')
-    csv2weka.dump(one_hot_encoding, output_filename=output_filename)
+    output_path = csv2weka.dump(
+        data=one_hot_encoding,
+        output_filename=output_filename,
+        feature_cols=feature_cols
+    )
 
-    click.echo('\nData exported. Please check with Weka software')
-
-    return one_hot_encoding
+    click.echo(
+        '\nData exported on {}. Please check with Weka software'.format(output_path)
+    )

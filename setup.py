@@ -10,8 +10,8 @@ from csv2weka import __version__
 here = os.path.dirname(os.path.abspath(__file__))
 version = __version__
 description = (
-    'CSV2ARFF is a simple analize tool written in python using '
-    'One Hot Encoding to Label classification.'
+    'Csv2Weka is a Python command line tool to convert string data'
+    ' to numerical using OneHotEncoding to use on Weka Software'
 )
 
 
