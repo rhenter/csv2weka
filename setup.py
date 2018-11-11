@@ -42,8 +42,8 @@ with codecs.open(os.path.join(here, 'requirements-dev.txt')) as f:
 
 
 setup(
-    author='Rafael Henter',
-    author_email='rafael@henter.com.br',
+    author='Ricardo Saracuza',
+    author_email='ricardo.saracuza@gmail.com',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Education',
@@ -51,9 +51,10 @@ setup(
         'Intended Audience :: Developers',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
+        'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
         'Programming Language :: Python',
         'Topic :: Education',
     ],
@@ -64,7 +65,7 @@ setup(
         csv2weka=csv2weka.__main__:cli
     ''',
     install_requires=install_requirements,
-    keywords='Weka',
+    keywords='Weka OneHotEncoding',
     license='MIT',
     long_description=long_description,
     name='csv2weka',

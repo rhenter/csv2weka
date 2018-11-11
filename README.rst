@@ -55,3 +55,11 @@ Help command
     -c TEXT    Columns to OneHotEncoding.
     --version  Show the version and exit.
     --help     Show this message and exit.
+
+
+
+Author
+======
+
+    Ricardo Saracuza
+    ricardo.saracuza@gmail.com
