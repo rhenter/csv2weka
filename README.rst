@@ -47,15 +47,16 @@ Help command
 
     Example:
 
-        $ csv2weka -i capture-sample.csv -o test.arff -c Protocol,State,Direction
+         $ csv2weka -i capture-sample.csv -o test.arff -f Protocol,State,Direction -c Label
 
     Options:
     -i TEXT    CSV File Name to generate DataFrame.
     -o TEXT    ARFF file Name to use on Weka.
-    -c TEXT    Columns to OneHotEncoding.
+    -f TEXT    Feature Columns to OneHotEncoding.
+    -c TEXT    Columns that are categorical and wont be converted to One Hot
+                Encoded column.
     --version  Show the version and exit.
     --help     Show this message and exit.
-
 
 
 Author
